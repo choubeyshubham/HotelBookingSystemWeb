@@ -1,51 +1,124 @@
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 70px 25px 75px;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
-  font-size: 20px;
+/*nav {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: center;*/
+/*  padding: 25px 70px 25px 75px;*/
+/*  background-color: white;*/
+/*  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+/*  font-family: Arial, sans-serif;*/
+/*  font-size: 20px;*/
+/*}*/
+
+
+/*.brand a {*/
+/*  font-size: 24px;*/
+/*  font-weight: bold;*/
+/*  color: #007F86;*/
+/*  text-decoration: none;*/
+/*}*/
+
+
+/*ul {*/
+/*  list-style: none;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  flex-wrap: wrap;*/
+/*}*/
+
+
+/*li {*/
+/*  margin-left: 20px;*/
+/*}*/
+
+
+/*li a {*/
+/*  text-decoration: none;*/
+/*  color: #666;*/
+/*  transition: color 0.5s;*/
+/*}*/
+
+
+/*li a:hover {*/
+/*  color: #FF007F;*/
+/*  color: #FF7F50;*/
+/*}*/
+
+
+/*li a.active0 {*/
+/*  color: #FF7F50;*/
+/*}*/
+
+.app-navbar {
+  background-color: #e3f2fd;
+  min-height: 62px;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
 }
 
-
-.brand a {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007F86;
-  text-decoration: none;
+.app-navbar .navbar-brand {
+  margin-right: 0.75rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  max-width: calc(100% - 56px);
 }
 
-
-ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  flex-wrap: wrap;
+.app-navbar .brand-logo {
+  display: block;
+  width: 150px;
+  height: 56px;
+  object-fit: contain;
 }
 
-
-li {
-  margin-left: 20px;
+.app-navbar .brand-title {
+  white-space: nowrap;
+  font-size: 1rem;
+  line-height: 1.1;
 }
 
-
-li a {
-  text-decoration: none;
-  color: #666;
-  transition: color 0.5s;
+.app-navbar .nav-link {
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
 }
 
+@media (max-width: 991.98px) {
+  .app-navbar {
+    min-height: 56px;
+  }
 
-li a:hover {
-  color: #FF007F;
-  color: #FF7F50;
-}
+  .app-navbar .brand-logo {
+    width: 92px;
+    height: 48px;
+  }
 
+  .app-navbar .brand-title {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.92rem;
+  }
 
-li a.active0 {
-  color: #FF7F50;
+  .app-navbar .navbar-collapse {
+    width: 100%;
+    margin-top: 0.35rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .app-navbar .navbar-nav {
+    width: 100%;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
+    gap: 0.15rem;
+  }
+
+  .app-navbar .nav-link {
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+  }
+
+  .app-navbar .nav-item .btn {
+    width: 100%;
+    text-align: left;
+  }
 }
