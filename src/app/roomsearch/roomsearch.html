@@ -1,1 +1,63 @@
-<p>roomsearch works!</p>
+<!-- Error Message -->
+@if (error) {
+  <div class="alert alert-danger text-center mb-3">
+    {{ error }}
+  </div>
+}
+
+<div class="container my-4">
+  <div class="card shadow-sm p-4">
+    <div class="row g-3 align-items-end">
+
+      <!-- Check-in Date -->
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Check-in Date</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="startDate"
+          [min]="minDate"
+          placeholder="Select Check-In Date"
+        />
+      </div>
+
+      <!-- Check-out Date -->
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Check-Out Date</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="endDate"
+          [min]="startDate"
+          placeholder="Select Check-Out Date"
+        />
+      </div>
+
+      <!-- Room Type -->
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Room Type</label>
+        <select class="form-select" [(ngModel)]="roomType">
+          <option disabled value="">Select Room Type</option>
+
+          @for (type of roomTypes; track type) {
+            <option [value]="type">
+              {{ type }}
+            </option>
+          }
+
+        </select>
+      </div>
+
+      <!-- Search Button -->
+      <div class="col-md-3 d-grid">
+        <button
+          class="btn btn-primary"
+          (click)="handleSearch()">
+          <i class="bi bi-search me-1"></i>
+          Search Rooms
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
