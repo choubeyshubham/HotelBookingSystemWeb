@@ -1,0 +1,105 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+
+  <div class="card shadow-lg p-4" style="width:420px;border-radius:16px">
+
+    <h3 class="text-center mb-4">Create Account</h3>
+
+    @if (error) {
+      <div class="alert alert-danger text-center">
+        {{ error }}
+      </div>
+    }
+
+    <form (ngSubmit)="handleSubmit()" #registerForm="ngForm">
+
+      <!-- First Name -->
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-person"></i>
+        </span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="First Name"
+          [(ngModel)]="formData.firstName"
+          name="firstName"
+          required
+        />
+      </div>
+
+      <!-- Last Name -->
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-person-badge"></i>
+        </span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Last Name"
+          [(ngModel)]="formData.lastName"
+          name="lastName"
+          required
+        />
+      </div>
+
+      <!-- Email -->
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-envelope"></i>
+        </span>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          [(ngModel)]="formData.email"
+          name="email"
+          required
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          <i class="bi bi-lock"></i>
+        </span>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          [(ngModel)]="formData.password"
+          name="password"
+          required
+        />
+      </div>
+
+      <!-- Phone -->
+      <div class="input-group mb-4">
+        <span class="input-group-text">
+          <i class="bi bi-telephone"></i>
+        </span>
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="Phone Number"
+          [(ngModel)]="formData.phoneNumber"
+          name="phoneNumber"
+          required
+        />
+      </div>
+
+      <button class="btn btn-primary w-100 mb-3" type="submit">
+        <i class="bi bi-person-plus"></i> Register
+      </button>
+
+    </form>
+
+    <p class="text-center mb-0">
+      Already have an account?
+      <a routerLink="/login" class="fw-semibold text-decoration-none">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+</div>
