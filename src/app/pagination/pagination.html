@@ -16,15 +16,15 @@
 
 <nav aria-label="Page navigation" class="d-flex justify-content-center py-2">
   <ul class="pagination">
-    @for (number of pageNumbers(); track number) {
-      <li class="page-item" [class.active]="currentPage() === number">
+    @for (number of pageNumbers; track number) {
+      <li class="page-item" [class.active]="currentPage === number">
         <button
           type="button"
           class="page-link"
           (click)="onPageChange(number)"
-          [style.background-color]="currentPage() === number ? '#007F86' : ''"
+          [style.background-color]="currentPage === number ? '#007F86' : ''"
           [style.border-color]="'#007F86'"
-          [style.color]="currentPage() === number ? '#fff' : '#007F86'"
+          [style.color]="currentPage === number ? '#fff' : '#007F86'"
         >
           {{ number }}
         </button>

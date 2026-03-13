@@ -16,7 +16,7 @@ export class Pagination {
 
 
   // Method to generate the page numbers
-  get pageNumber(): number[] {
+  get pageNumbers(): number[] {
     const pageCount = Math.ceil(this.totalRooms / this.roomPerPage);
     return Array.from({length: pageCount}, (_, i) => i + 1);
   }
