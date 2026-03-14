@@ -22,7 +22,7 @@ export class GuardService implements CanActivate {
 
     if (requiresAdmin) {
       if(this.apiService.isAdmin()){
-        return true; //allow acceess for admin if the user is an admin
+        return true; //allow access for admin if the user is an admin
       }else{
         this.router.navigate(['/login'], {
           queryParams: {returnUrl: state.url}
