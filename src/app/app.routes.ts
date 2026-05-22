@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import {Login} from './login/login';
 import {Register} from './register/register';
+import {GuardService} from './service/guard.service';
+import {Profile} from './profile/profile';
 // import { RegisterComponent } from './register/register.component';
 // import { ProfileComponent } from './profile/profile.component';
 // import { GuardService } from './service/guard.service';
@@ -33,7 +35,7 @@ export const routes: Routes = [
   // {path: 'find-booking', component: FindbookingComponent},
   //
   //
-  // {path: 'profile', component: ProfileComponent, canActivate: [GuardService]},
+   {path: 'profile', component: Profile, canActivate: [GuardService]},
   // {path: 'edit-profile', component: EditprofileComponent, canActivate: [GuardService]},
 
   //PAYMENTS ROUTES

@@ -1,0 +1,30 @@
+<!-- room-result.component.html -->
+<section>
+    @if (roomSearchResults && roomSearchResults.length > 0) {
+    <div>  
+      @for (room of roomSearchResults; track room.id) {
+      <div class="item">
+        <img [src]="room.imageUrl" [alt]="room.roomNumber" />
+        <div class="details">
+          <h3>{{ room.type }}</h3>
+          <p>Price: ${{ room.pricePerNight }}/Night</p>
+          <p>Des
+            cription: {{ room.description }}</p>
+            </div>
+  
+        <div class="book-now">
+          <!-- Conditionally render button based on admin status -->
+            @if (isAdmin) {
+          <button (click)="navigateToEditRoom(room.id)">
+            Edit Room
+          </button>
+          }
+          @if (!isAdmin) {
+          <button  (click)="navigateToRoomDetails(room.id)">
+            View/Book Now
+          </button>}
+        </div>
+      </div>}
+    </div>}
+  </section>
+  
